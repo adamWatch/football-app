@@ -1,0 +1,60 @@
+{
+    "players": [
+        {
+            "currId": "5"
+        },
+        {
+            "id": "1",
+            "playerName": "Jacob",
+            "playerSurname": "Smith",
+            "playerTeam": "none"
+        },
+        {
+            "id": "2",
+            "playerName": "Oswald",
+            "playerSurname": "Jade",
+            "playerTeam": "none"
+        },
+        {
+            "id": "3",
+            "playerName": "Saul",
+            "playerSurname": "Goodman",
+            "playerTeam": "none"
+        },
+        {
+            "id": "4",
+            "playerName": "Gustavo",
+            "playerSurname": "White",
+            "playerTeam": "none"
+        }
+    ],
+    "teams": [
+        {
+            "currId": "5"
+        },
+        {
+            "id": "1",
+            "teamName": "Mahakham Hammer",
+            "foundingYear": "1984",
+            "location": "Czech republic"
+        },
+        {
+            "id": "2",
+            "teamName": "Divine Forest",
+            "foundingYear": "1941",
+            "location": "England"
+        },
+        {
+            "id": "3",
+            "teamName": "Greenhouse",
+            "foundingYear": "1918",
+            "location": "Sweden"
+        },
+        {
+            "id": "4",
+            "teamName": "Moon Crawler",
+            "foundingYear": "1969",
+            "location": "USA"
+        }
+    ]
+}
