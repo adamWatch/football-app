@@ -1,3 +1,4 @@
+import { FootballApp } from './components/FootballApp/FootballApp'
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1>Welcome everybody</h1> 
+      <FootballApp/>
     </>
   )
 }
