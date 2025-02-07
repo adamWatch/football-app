@@ -1,12 +1,16 @@
 import { FootballApp } from './components/FootballApp/FootballApp'
+import { QueryClientProvider,QueryClient } from '@tanstack/react-query';
 
+const queryClient = new QueryClient();
 
 function App() {
   
 
   return (
     <>
-      <FootballApp/>
+      <QueryClientProvider client={queryClient}>
+        <FootballApp/>
+      </QueryClientProvider>
     </>
   )
 }
