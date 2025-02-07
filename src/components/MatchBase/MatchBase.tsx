@@ -1,18 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { StyledListContainer,StyledListBaner, } from '../../styles/StyledList';
 import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
-
-interface Match {
-    id: number;
-    title: string;
-    team1: string;
-    team2: string;
-    score: string;
-    winner: string;
-    date: string;
-    location: string;
-    duration: number;
-}
+import { Match } from '../../types/Match';
 
 
 const FetchMatchList = () =>{

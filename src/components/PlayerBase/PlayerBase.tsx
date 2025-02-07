@@ -1,14 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { StyledListContainer,StyledListBaner, } from '../../styles/StyledList';
 import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
-
-interface Player {
-    id: number;
-    playerName: string;
-    playerSurname: string;
-    playerTeam: string;
-}
-
+import { Player } from '../../types/Player';
 
 const FetchPlayerList = () =>{
 
