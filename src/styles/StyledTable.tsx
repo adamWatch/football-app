@@ -20,4 +20,5 @@ export const StyledTd = styled.td`
     border: 3px solid black;
     font-size: 1.5rem;
     padding: 0.5rem;
+    text-align: center;
 `
