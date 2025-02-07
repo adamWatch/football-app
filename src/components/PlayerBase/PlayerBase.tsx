@@ -1,16 +1,60 @@
-import { StyledListContainer,StyledListBaner, StyledUl,StyledListItem } from '../../styles/StyledList';
+import { useQuery } from '@tanstack/react-query';
+import { StyledListContainer,StyledListBaner, } from '../../styles/StyledList';
+import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
+
+interface Player {
+    id: number;
+    playerName: string;
+    playerSurname: string;
+    playerTeam: string;
+}
+
+
+const FetchPlayerList = () =>{
+
+    const {data, isLoading} = useQuery({
+        queryKey: ['players'],
+        queryFn: async () => {
+            const response = await fetch('http://localhost:3000/players');
+            return response.json();
+        }
+        
+    })
+    const PlayersData = {
+        currId: data[0].currId,
+        playersList:data.slice(1),
+        isLoading
+    }
+    return PlayersData;
+}
 
 
 
 
 export const PlayerBase = ()=>{
+    const playersData = FetchPlayerList();
+
+console.log(playersData)
 
     return <StyledListContainer>
         <StyledListBaner>Player List</StyledListBaner>
-        <StyledUl>
-         <StyledListItem>Marcin Lopian</StyledListItem>
-         <StyledListItem>Marcin Lopian</StyledListItem>
-         <StyledListItem>Marcin Lopian</StyledListItem>
-        </StyledUl>
+        <StyledTable>
+                <thead>
+                    <tr>
+                        <StyledTh>Name</StyledTh>
+                        <StyledTh>Surname</StyledTh>
+                        <StyledTh>Team</StyledTh>
+                    </tr>
+                </thead>
+                <tbody>
+                    {playersData.playersList.map((player:Player) => (
+                        <tr key={player.id}>
+                            <StyledTd>{player.playerName}</StyledTd>
+                            <StyledTd>{player.playerSurname}</StyledTd>
+                            <StyledTd>{player.playerTeam}</StyledTd>
+                        </tr>
+                    ))}
+                </tbody>
+            </StyledTable>
     </StyledListContainer>
 }
