@@ -10,6 +10,7 @@ export const StyledTable = styled.table`
 
 
 export const StyledTh = styled.th`
+    color: #13192b;
     border: 3px solid black;
     font-size: 1.8rem;
     padding: 0.5rem;
