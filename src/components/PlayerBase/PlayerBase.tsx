@@ -21,8 +21,8 @@ const FetchPlayerList = () =>{
         
     })
     const PlayersData = {
-        currId: data[0].currId,
-        playersList:data.slice(1),
+        currId: data ? data[0].currId : null,
+        playersList: data ? data.slice(1) : [],
         isLoading
     }
     return PlayersData;
@@ -47,7 +47,7 @@ console.log(playersData)
                     </tr>
                 </thead>
                 <tbody>
-                    {playersData.playersList.map((player:Player) => (
+                    {!playersData.isLoading && playersData.playersList.map((player:Player) => (
                         <tr key={player.id}>
                             <StyledTd>{player.playerName}</StyledTd>
                             <StyledTd>{player.playerSurname}</StyledTd>
