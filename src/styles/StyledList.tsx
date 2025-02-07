@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledListBaner = styled.h2`
     
-    font-size: 1.9rem;
+    font-size: 2.5rem;
     padding: 0.5rem;
     
 
