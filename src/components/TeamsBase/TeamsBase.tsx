@@ -38,7 +38,7 @@ export const TeamsBase = ()=>{
 
 
     return <StyledListContainer>
-        <StyledListBaner>Team List</StyledListBaner>
+        <StyledListBaner>Teams List</StyledListBaner>
         <StyledTable>
                 <thead>
                     <tr>

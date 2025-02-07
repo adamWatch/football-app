@@ -57,7 +57,7 @@
             "location": "USA"
         }
     ],
-    "Matches": [
+    "matches": [
         {
             "currId": "5"
         },
@@ -67,6 +67,7 @@
             "team1": "Mahakham Hammer",
             "team2": "Divine Forest",
             "score": "2:1",
+            "winner": "Mahakham Hammer",
             "date": "2021-09-01",
             "location": "Montreal",
             "duration": 90
@@ -77,6 +78,7 @@
             "team1": "Greenhouse",
             "team2": "Moon Crawler",
             "score": "4:0",
+            "winner": "Mahakham Hammer",
             "date": "2021-09-02",
             "location": "Montreal",
             "duration": 90
@@ -87,6 +89,7 @@
             "team1": "Mahakham Hammer",
             "team2": "Greenhouse",
             "score": "1:1",
+            "winner": "draw",
             "date": "2021-09-03",
             "location": "Montreal",
             "duration": 120
@@ -97,6 +100,7 @@
             "team1": "Divine Forest",
             "team2": "Moon Crawler",
             "score": "3:2",
+            "winner": "Divine Forest",
             "date": "2021-09-04",
             "location": "Montreal",
             "duration": 90

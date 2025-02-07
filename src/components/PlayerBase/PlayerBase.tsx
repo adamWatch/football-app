@@ -37,7 +37,7 @@ export const PlayerBase = ()=>{
 console.log(playersData)
 
     return <StyledListContainer>
-        <StyledListBaner>Player List</StyledListBaner>
+        <StyledListBaner>Players List</StyledListBaner>
         <StyledTable>
                 <thead>
                     <tr>
