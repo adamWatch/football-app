@@ -13,15 +13,3 @@ export const StyledListContainer = styled.div`
     flex-direction: column;
     padding-top: 0.5rem;
 `
-
-export const StyledUl = styled.ul`
-    
-    border: 3px solid black;
-
-`
-
-export const StyledListItem = styled.li`
-    
-    font-size: 1.3rem;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-`
