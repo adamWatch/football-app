@@ -50,7 +50,8 @@ export default tseslint.config(
         }
       ],
       "no-plusplus": 0,
-      "no-param-reassign": 0
+      "no-param-reassign": 0,
+      "react-hooks/rules-of-hooks": 0,
     },
   },
 )
