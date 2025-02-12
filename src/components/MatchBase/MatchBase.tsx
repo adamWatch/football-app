@@ -2,31 +2,12 @@ import { useQuery } from '@tanstack/react-query';
 import { StyledListContainer,StyledListBaner, } from '../../styles/StyledList';
 import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
 import { Match } from '../../types/Match';
-
-
-const FetchMatchList = () =>{
-
-    const {data, isLoading} = useQuery({
-        queryKey: ['matches'],
-        queryFn: async () => {
-            const response = await fetch('http://localhost:3000/matches');
-            return response.json();
-        }
-        
-    })
-    const matchesData = {
-        currId: data ? data[0].currId : null,
-        matchesList: data ? data.slice(1) : [],
-        isLoading
-    }
-    return matchesData;
-}
-
+import { FetchList } from '../../utils/FetchList';
 
 
 
 export const MatchBase = ()=>{
-    const matchesData = FetchMatchList();
+    const matchesData = FetchList('matches');
 
 
     return <StyledListContainer>
@@ -45,7 +26,7 @@ export const MatchBase = ()=>{
                     </tr>
                 </thead>
                 <tbody>
-                    {!matchesData.isLoading && matchesData.matchesList.map((match:Match) => (
+                    {!matchesData.isLoading && matchesData.list.map((match:Match) => (
                         <tr key={match.id}>
                             <StyledTd>{match.title}</StyledTd>
                             <StyledTd>{match.team1}</StyledTd>

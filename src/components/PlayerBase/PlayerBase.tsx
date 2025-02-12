@@ -1,31 +1,12 @@
-import { useQuery } from '@tanstack/react-query';
+
 import { StyledListContainer,StyledListBaner, } from '../../styles/StyledList';
 import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
 import { Player } from '../../types/Player';
-
-const FetchPlayerList = () =>{
-
-    const {data, isLoading} = useQuery({
-        queryKey: ['players'],
-        queryFn: async () => {
-            const response = await fetch('http://localhost:3000/players');
-            return response.json();
-        }
-        
-    })
-    const PlayersData = {
-        currId: data ? data[0].currId : null,
-        playersList: data ? data.slice(1) : [],
-        isLoading
-    }
-    return PlayersData;
-}
-
-
+import { FetchList } from '../../utils/FetchList';
 
 
 export const PlayerBase = ()=>{
-    const playersData = FetchPlayerList();
+    const playersData = FetchList('players');
 
 console.log(playersData)
 
@@ -40,7 +21,7 @@ console.log(playersData)
                     </tr>
                 </thead>
                 <tbody>
-                    {!playersData.isLoading && playersData.playersList.map((player:Player) => (
+                    {!playersData.isLoading && playersData.list.map((player:Player) => (
                         <tr key={player.id}>
                             <StyledTd>{player.playerName}</StyledTd>
                             <StyledTd>{player.playerSurname}</StyledTd>
@@ -49,5 +30,7 @@ console.log(playersData)
                     ))}
                 </tbody>
             </StyledTable>
+        <button>Add</button>    
+        <button>Edit</button>    
     </StyledListContainer>
 }
