@@ -1,14 +1,20 @@
 
+import { useState } from 'react';
 import { StyledListContainer,StyledListBaner, } from '../../styles/StyledList';
 import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
 import { Player } from '../../types/Player';
 import { FetchList } from '../../utils/FetchList';
+import { AddToList } from '../AddToList/AddToList';
 
 
 export const PlayerBase = ()=>{
+    const [addForm, setAddForm] = useState(false);
     const playersData = FetchList('players');
 
-console.log(playersData)
+   const showAddForm = () => {
+        setAddForm(!addForm);
+    }
+
 
     return <StyledListContainer>
         <StyledListBaner>Players List</StyledListBaner>
@@ -30,7 +36,8 @@ console.log(playersData)
                     ))}
                 </tbody>
             </StyledTable>
-        <button>Add</button>    
+        {addForm && <AddToList showAddForm ={showAddForm}  />}
+        <button onClick={showAddForm}>Add</button>    
         <button>Edit</button>    
     </StyledListContainer>
 }
