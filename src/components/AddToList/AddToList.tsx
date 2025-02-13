@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { FetchList } from '../../utils/FetchList';
-import { Player } from '../../types/Player';
+import { PlayerAdded } from '../../types/Player';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';    
+import { StyledForm, StyledFormBaner, StyledFormBtnBack, StyledFormBtnSubmit, StyledFormContainer, StyledFormInput, StyledFormLabel } from '../../styles/StyledForm';
 
 interface AddToListProps {
     showAddForm:()=>void;
@@ -15,11 +16,11 @@ export const AddToList = (props:AddToListProps)=>{
 
     const playersData = FetchList('players');
 
-    const[playerData,setPlayerData]  = useState<Player>({
+    const[playerData,setPlayerData]  = useState<PlayerAdded>({
         id:Number(playersData.currId) + 1,
         playerName:'',
         playerSurname:'',
-        playerTeam:''
+        
     })
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) =>{
@@ -34,22 +35,20 @@ export const AddToList = (props:AddToListProps)=>{
         console.log(playerData)
     }
 
-    return <>
-        <button onClick={showAddForm}><FontAwesomeIcon icon={faX}/></button>
-        <form onSubmit={handleSubmit}>
-            <label>Name:
-                <input type='text' name='name' onChange={handleChange} />
-            </label>
-            <label>Surname:
-                <input type='text' name='surname'onChange={handleChange}  />
-            </label>
-            <label>Team:
-                <input type='text' name='team'onChange={handleChange}  />
-            </label>
-            <button type='submit'>Add player</button>
+    return <StyledFormContainer>
+        <StyledFormBaner>New Player</StyledFormBaner>
+        <StyledFormBtnBack onClick={showAddForm}><FontAwesomeIcon icon={faX}/></StyledFormBtnBack>
+        <StyledForm onSubmit={handleSubmit}>
+            <StyledFormLabel>Name:
+                <StyledFormInput type='text' name='name' onChange={handleChange} />
+            </StyledFormLabel>
+            <StyledFormLabel>Surname:
+                <StyledFormInput type='text' name='surname'onChange={handleChange}  />
+            </StyledFormLabel>
+            <StyledFormBtnSubmit type='submit'>Add player</StyledFormBtnSubmit>
             
-        </form>
-    </>
+        </StyledForm>
+    </StyledFormContainer>
 
 }
 
