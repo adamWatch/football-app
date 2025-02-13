@@ -4,3 +4,9 @@ export interface Player {
     playerSurname: string;
     playerTeam: string;
 }
+
+export interface PlayerAdded {
+    id: number;
+    playerName: string;
+    playerSurname: string;
+}
