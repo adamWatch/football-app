@@ -5,6 +5,7 @@ import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
 import { Player } from '../../types/Player';
 import { FetchList } from '../../utils/FetchList';
 import { AddToList } from '../AddToList/AddToList';
+import { StyledOverlay } from '../../styles/StyledForm';
 
 
 export const PlayerBase = ()=>{
@@ -36,7 +37,8 @@ export const PlayerBase = ()=>{
                     ))}
                 </tbody>
             </StyledTable>
-        {addForm && <AddToList showAddForm ={showAddForm}  />}
+        {addForm &&<AddToList showAddForm ={showAddForm}/> }
+        {addForm && <StyledOverlay/>}
         <button onClick={showAddForm}>Add</button>    
         <button>Edit</button>    
     </StyledListContainer>
