@@ -1,68 +1,74 @@
 {
     "players": [
         {
-            "currId": "5"
+            "currId": 5
         },
         {
-            "id": "1",
+            "id": 1,
             "playerName": "Jacob",
             "playerSurname": "Smith",
             "playerTeam": "none"
         },
         {
-            "id": "2",
+            "id": 2,
             "playerName": "Oswald",
             "playerSurname": "Jade",
             "playerTeam": "none"
         },
         {
-            "id": "3",
+            "id": 3,
             "playerName": "Saul",
             "playerSurname": "Goodman",
             "playerTeam": "none"
         },
         {
-            "id": "4",
+            "id": 4,
             "playerName": "Gustavo",
             "playerSurname": "White",
             "playerTeam": "none"
+        },
+        {
+            "id": 5,
+            "playerName": "Robert",
+            "playerSurname": "Black",
+            "playerTeam": "Divine Forest"
         }
     ],
     "teams": [
         {
-            "currId": "5"
+            "currId": 5
         },
         {
-            "id": "1",
+            "id": 1,
             "teamName": "Mahakham Hammer",
-            "foundingYear": "1984",
+            "foundingYear": 1984,
             "location": "Czech republic"
         },
         {
-            "id": "2",
+            "id": 2,
             "teamName": "Divine Forest",
-            "foundingYear": "1941",
+            "foundingYear": 1941,
             "location": "England"
         },
         {
-            "id": "3",
+            "id": 3,
             "teamName": "Greenhouse",
-            "foundingYear": "1918",
+            "foundingYear": 1918,
             "location": "Sweden"
         },
         {
-            "id": "4",
+            "id": 4,
             "teamName": "Moon Crawler",
-            "foundingYear": "1969",
+            "foundingYear": 1969,
             "location": "USA"
         }
     ],
     "matches": [
         {
-            "currId": "5"
+            "currId": 5
         },
         {
-            "id": "1",
+            "id": 1,
             "title": "Word Cup",
             "team1": "Mahakham Hammer",
             "team2": "Divine Forest",
@@ -73,7 +79,7 @@
             "duration": 90
         },
         {
-            "id": "2",
+            "id": 2,
             "title": "Word Cup",
             "team1": "Greenhouse",
             "team2": "Moon Crawler",
@@ -84,7 +90,7 @@
             "duration": 90
         },
         {
-            "id": "3",
+            "id": 3,
             "title": "Word Cup",
             "team1": "Mahakham Hammer",
             "team2": "Greenhouse",
@@ -95,7 +101,7 @@
             "duration": 120
         },
         {
-            "id": "4",
+            "id": 4,
             "title": "Word Cup",
             "team1": "Divine Forest",
             "team2": "Moon Crawler",
