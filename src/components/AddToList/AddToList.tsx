@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { FetchList } from '../../utils/FetchList';
-import { PlayerAdded } from '../../types/Player';
+import { Player } from '../../types/Player';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';    
 import { StyledForm, StyledFormBaner, StyledFormBtnBack, StyledFormBtnSubmit, StyledFormContainer, StyledFormInput, StyledFormLabel } from '../../styles/StyledForm';
@@ -16,10 +16,11 @@ export const AddToList = (props:AddToListProps)=>{
 
     const playersData = FetchList('players');
 
-    const[playerData,setPlayerData]  = useState<PlayerAdded>({
+    const[playerData,setPlayerData]  = useState<Player>({
         id:Number(playersData.currId) + 1,
         playerName:'',
         playerSurname:'',
+        playerTeam:'none'
         
     })
 
