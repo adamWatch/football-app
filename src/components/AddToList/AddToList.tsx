@@ -1,28 +1,33 @@
-import { useState } from 'react'
-import { FetchList } from '../../utils/FetchList';
+import {  useState } from 'react'
 import { Player } from '../../types/Player';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';    
 import { StyledForm, StyledFormBaner, StyledFormBtnBack, StyledFormBtnSubmit, StyledFormContainer, StyledFormInput, StyledFormLabel } from '../../styles/StyledForm';
+import { useAddForm } from '../hooks/useAddForm';
+import {v4 as uuidv4} from 'uuid';
 
 interface AddToListProps {
     showAddForm:()=>void;
+    forceRender:()=>void;
 }
 
 
 export const AddToList = (props:AddToListProps)=>{
 
-    const {showAddForm} = props;
+    const {showAddForm, forceRender} = props;
 
-    const playersData = FetchList('players');
-
+    const addPlayer = useAddForm('players');
+    
     const[playerData,setPlayerData]  = useState<Player>({
-        id:Number(playersData.currId) + 1,
+        id:uuidv4(),
         playerName:'',
         playerSurname:'',
         playerTeam:'none'
         
     })
+
+    
+
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) =>{
         setPlayerData({
@@ -33,18 +38,28 @@ export const AddToList = (props:AddToListProps)=>{
 
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
-        console.log(playerData)
+        console.log(playerData);
+        addPlayer(playerData);
+        showAddForm();
+        forceRender();
     }
+    
 
     return <StyledFormContainer>
         <StyledFormBaner>New Player</StyledFormBaner>
         <StyledFormBtnBack onClick={showAddForm}><FontAwesomeIcon icon={faX}/></StyledFormBtnBack>
         <StyledForm onSubmit={handleSubmit}>
             <StyledFormLabel>Name:
-                <StyledFormInput type='text' name='name' onChange={handleChange} />
+                <StyledFormInput type='text' name='playerName'
+                pattern="[A-Za-z]*"
+                title="Only uppercase and lowercase letters are allowed" 
+                onChange={handleChange} />
             </StyledFormLabel>
             <StyledFormLabel>Surname:
-                <StyledFormInput type='text' name='surname'onChange={handleChange}  />
+                <StyledFormInput type='text' 
+                pattern="[A-Za-z]*"
+                title="Only uppercase and lowercase letters are allowed"
+                name='playerSurname'onChange={handleChange}  />
             </StyledFormLabel>
             <StyledFormBtnSubmit type='submit'>Add player</StyledFormBtnSubmit>
             
@@ -52,21 +67,3 @@ export const AddToList = (props:AddToListProps)=>{
     </StyledFormContainer>
 
 }
-
-
-
-    // const {mutate} = useMutation({
-    //     mutationKey: [mutationKey],
-    //     mutationFn: async (newPlayer:Player) => {
-    //         const response = await fetch(`http://localhost:3000/${mutationKey}`,{
-    //             method:'POST',
-    //             headers:{
-    //                 'Content-Type':'application/json'
-    //             },
-    //             body: JSON.stringify(newPlayer)
-    //         })
-    //         return response.json()
-    //     }
-    // })
-
-    // return mutate;
