@@ -11,7 +11,6 @@ export const FetchList = (queryKey:string) =>{
         
     })
     const editData = {
-        currId: data ? data[0].currId : null,
         list: data ? data.slice(1) : [],
         isLoading
     }
