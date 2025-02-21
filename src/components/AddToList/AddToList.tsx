@@ -8,13 +8,15 @@ import {v4 as uuidv4} from 'uuid';
 
 interface AddToListProps {
     showAddForm:()=>void;
-    forceRender:()=>void;
+    setNotice:(notice:string)=>void;
+    showNotice:()=>void;
+
 }
 
 
 export const AddToList = (props:AddToListProps)=>{
 
-    const {showAddForm, forceRender} = props;
+    const {showAddForm, setNotice, showNotice} = props;
 
     const addPlayer = useAddForm('players');
     
@@ -41,7 +43,9 @@ export const AddToList = (props:AddToListProps)=>{
         console.log(playerData);
         addPlayer(playerData);
         showAddForm();
-        forceRender();
+        showNotice();
+        setNotice('Player added');
+       
     }
     
 
