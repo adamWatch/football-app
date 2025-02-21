@@ -1,115 +1,133 @@
 {
-    "players": [
-        {
-            "currId": 5
-        },
-        {
-            "id": 1,
-            "playerName": "Jacob",
-            "playerSurname": "Smith",
-            "playerTeam": "none"
-        },
-        {
-            "id": 2,
-            "playerName": "Oswald",
-            "playerSurname": "Jade",
-            "playerTeam": "none"
-        },
-        {
-            "id": 3,
-            "playerName": "Saul",
-            "playerSurname": "Goodman",
-            "playerTeam": "none"
-        },
-        {
-            "id": 4,
-            "playerName": "Gustavo",
-            "playerSurname": "White",
-            "playerTeam": "none"
-        },
-        {
-            "id": 5,
-            "playerName": "Robert",
-            "playerSurname": "Black",
-            "playerTeam": "Divine Forest"
-        }
-    ],
-    "teams": [
-        {
-            "currId": 5
-        },
-        {
-            "id": 1,
-            "teamName": "Mahakham Hammer",
-            "foundingYear": 1984,
-            "location": "Czech republic"
-        },
-        {
-            "id": 2,
-            "teamName": "Divine Forest",
-            "foundingYear": 1941,
-            "location": "England"
-        },
-        {
-            "id": 3,
-            "teamName": "Greenhouse",
-            "foundingYear": 1918,
-            "location": "Sweden"
-        },
-        {
-            "id": 4,
-            "teamName": "Moon Crawler",
-            "foundingYear": 1969,
-            "location": "USA"
-        }
-    ],
-    "matches": [
-        {
-            "currId": 5
-        },
-        {
-            "id": 1,
-            "title": "Word Cup",
-            "team1": "Mahakham Hammer",
-            "team2": "Divine Forest",
-            "score": "2:1",
-            "winner": "Mahakham Hammer",
-            "date": "2021-09-01",
-            "location": "Montreal",
-            "duration": 90
-        },
-        {
-            "id": 2,
-            "title": "Word Cup",
-            "team1": "Greenhouse",
-            "team2": "Moon Crawler",
-            "score": "4:0",
-            "winner": "Greenhouse",
-            "date": "2021-09-02",
-            "location": "Montreal",
-            "duration": 90
-        },
-        {
-            "id": 3,
-            "title": "Word Cup",
-            "team1": "Mahakham Hammer",
-            "team2": "Greenhouse",
-            "score": "1:1",
-            "winner": "Draw",
-            "date": "2021-09-03",
-            "location": "Montreal",
-            "duration": 120
-        },
-        {
-            "id": 4,
-            "title": "Word Cup",
-            "team1": "Divine Forest",
-            "team2": "Moon Crawler",
-            "score": "3:2",
-            "winner": "Divine Forest",
-            "date": "2021-09-04",
-            "location": "Montreal",
-            "duration": 90
-        }
-    ]
+  "players": [
+    {
+      "id": "33ab"
+    },
+    {
+      "id": "1",
+      "playerName": "Jacob",
+      "playerSurname": "Smith",
+      "playerTeam": "none"
+    },
+    {
+      "id": "2",
+      "playerName": "Oswald",
+      "playerSurname": "Jade",
+      "playerTeam": "none"
+    },
+    {
+      "id": "3",
+      "playerName": "Saul",
+      "playerSurname": "Goodman",
+      "playerTeam": "none"
+    },
+    {
+      "id": "4",
+      "playerName": "Gustavo",
+      "playerSurname": "White",
+      "playerTeam": "none"
+    },
+    {
+      "id": "5",
+      "playerName": "Robert",
+      "playerSurname": "Black",
+      "playerTeam": "Divine Forest"
+    },
+    {
+      "id": "6",
+      "playerName": "Janusz",
+      "playerSurname": "Tracz",
+      "playerTeam": "none"
+    },
+    {
+      "id": "7",
+      "playerName": "Felix",
+      "playerSurname": "Krawiec",
+      "playerTeam": "none"
+    },
+    {
+      "id": "e630594a-3b7e-472d-9170-c1952ecc034a",
+      "playerName": "magda",
+      "playerSurname": "trep",
+      "playerTeam": "none"
+    }
+  ],
+  "teams": [
+    {
+      "id": "8897"
+    },
+    {
+      "id": "1",
+      "teamName": "Mahakham Hammer",
+      "foundingYear": 1984,
+      "location": "Czech republic"
+    },
+    {
+      "id": "2",
+      "teamName": "Divine Forest",
+      "foundingYear": 1941,
+      "location": "England"
+    },
+    {
+      "id": "3",
+      "teamName": "Greenhouse",
+      "foundingYear": 1918,
+      "location": "Sweden"
+    },
+    {
+      "id": "4",
+      "teamName": "Moon Crawler",
+      "foundingYear": 1969,
+      "location": "USA"
+    }
+  ],
+  "matches": [
+    {
+      "id": "9964"
+    },
+    {
+      "id": "1",
+      "title": "Word Cup",
+      "team1": "Mahakham Hammer",
+      "team2": "Divine Forest",
+      "score": "2:1",
+      "winner": "Mahakham Hammer",
+      "date": "2021-09-01",
+      "location": "Montreal",
+      "duration": 90
+    },
+    {
+      "id": "2",
+      "title": "Word Cup",
+      "team1": "Greenhouse",
+      "team2": "Moon Crawler",
+      "score": "4:0",
+      "winner": "Greenhouse",
+      "date": "2021-09-02",
+      "location": "Montreal",
+      "duration": 90
+    },
+    {
+      "id": "3",
+      "title": "Word Cup",
+      "team1": "Mahakham Hammer",
+      "team2": "Greenhouse",
+      "score": "1:1",
+      "winner": "Draw",
+      "date": "2021-09-03",
+      "location": "Montreal",
+      "duration": 120
+    },
+    {
+      "id": "4",
+      "title": "Word Cup",
+      "team1": "Divine Forest",
+      "team2": "Moon Crawler",
+      "score": "3:2",
+      "winner": "Divine Forest",
+      "date": "2021-09-04",
+      "location": "Montreal",
+      "duration": 90
+    }
+  ]
 }
