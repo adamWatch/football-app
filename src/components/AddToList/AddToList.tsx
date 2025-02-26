@@ -40,7 +40,6 @@ export const AddToList = (props:AddToListProps)=>{
 
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault();
-        console.log(playerData);
         addPlayer(playerData);
         showAddForm();
         showNotice();
