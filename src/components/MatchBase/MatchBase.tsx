@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { StyledListContainer,StyledListBaner, } from '../../styles/StyledList';
 import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
 import { Match } from '../../types/Match';
-import { FetchList } from '../../utils/FetchList';
+import { FetchList } from '../hooks/FetchList';
 
 
 

@@ -3,7 +3,7 @@ import { useState} from 'react';
 import { StyledListContainer,StyledListBaner, } from '../../styles/StyledList';
 import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
 import { Player } from '../../types/Player';
-import { FetchList } from '../../utils/FetchList';
+import { FetchList } from '../hooks/FetchList';
 import { AddToList } from '../AddToList/AddToList';
 import { StyledOverlay } from '../../styles/StyledForm';
 import { Notice } from '../Notice/Notice';

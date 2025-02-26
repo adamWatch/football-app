@@ -3,7 +3,7 @@ import { StyledListContainer,StyledListBaner,} from '../../styles/StyledList';
 
 import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
 import { Team } from '../../types/Team';
-import { FetchList } from '../../utils/FetchList';
+import { FetchList } from '../hooks/FetchList';
 
 
 export const TeamsBase = ()=>{
