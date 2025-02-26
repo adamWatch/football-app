@@ -1,12 +1,12 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { Player } from '../../types/Player';
+import { DataTypes } from '../../types/DataTypes';
 
-export const useAddForm = (type: string) => {
+export const useAddForm = <T extends keyof DataTypes>(type: T) => {
     const queryClient = useQueryClient();
 
     const { mutate } = useMutation({
         mutationKey: [type],
-        mutationFn: async (newData: Player) => {
+        mutationFn: async (newData: DataTypes[T]) => {
             const res = await fetch(`http://localhost:3000/${type}/`, {
                 method: 'POST',
                 body: JSON.stringify(newData),
