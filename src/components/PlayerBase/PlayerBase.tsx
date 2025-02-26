@@ -1,5 +1,5 @@
 
-import { useEffect, useState} from 'react';
+import { useState} from 'react';
 import { StyledListContainer,StyledListBaner, } from '../../styles/StyledList';
 import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
 import { Player } from '../../types/Player';
@@ -22,6 +22,7 @@ export const PlayerBase = ()=>{
 
     const showNotice = () => {
         setIsNotice(!isNotice);
+        setTimeout(()=>setIsNotice(false),2500);
     }
     
     console.log(playersData)
