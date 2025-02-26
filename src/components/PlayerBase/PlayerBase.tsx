@@ -25,7 +25,6 @@ export const PlayerBase = ()=>{
         setTimeout(()=>setIsNotice(false),2500);
     }
     
-    console.log(playersData)
 
     return <StyledListContainer>
         <StyledListBaner>Players List</StyledListBaner>
