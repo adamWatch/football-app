@@ -4,7 +4,7 @@ import { StyledListContainer,StyledListBaner, } from '../../styles/StyledList';
 import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
 import { Player } from '../../types/Player';
 import { FetchList } from '../hooks/FetchList';
-import { AddToList } from '../AddToList/AddToList';
+import { AddToList } from '../AddToList/AddPlayerToList';
 import { StyledOverlay } from '../../styles/StyledForm';
 import { Notice } from '../Notice/Notice';
 
