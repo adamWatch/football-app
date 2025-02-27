@@ -53,7 +53,7 @@ export const PlayerBase = ()=>{
                 </tbody>
             </StyledTable>
         {addForm &&<AddToList showAddForm ={showAddForm} showNotice = {showNotice} setNotice = {setNotice} />  }
-        {editMode &&<EditPlayerList type='tap' showEditMode={showEditMode}/> }
+        {editMode &&<EditPlayerList showEditMode={showEditMode}/> }
         {addForm &&<StyledOverlay/>}
         {editMode &&<StyledOverlay/>}
         {isNotice && <Notice text={notice}/>}
