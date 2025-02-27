@@ -4,40 +4,10 @@
       "id": "33ab"
     },
     {
-      "id": "1",
-      "playerName": "Jacob",
-      "playerSurname": "Smith",
-      "playerTeam": "none"
-    },
-    {
-      "id": "2",
-      "playerName": "Oswald",
-      "playerSurname": "Jade",
-      "playerTeam": "none"
-    },
-    {
-      "id": "3",
-      "playerName": "Saul",
-      "playerSurname": "Goodman",
-      "playerTeam": "none"
-    },
-    {
-      "id": "4",
-      "playerName": "Gustavo",
-      "playerSurname": "White",
-      "playerTeam": "none"
-    },
-    {
       "id": "5",
       "playerName": "Robert",
       "playerSurname": "Black",
       "playerTeam": "Divine Forest"
-    },
-    {
-      "id": "c3173d71-6015-4972-864e-b0f796bdff05",
-      "playerName": "max",
-      "playerSurname": "burger",
-      "playerTeam": "none"
     },
     {
       "id": "34632c56-995a-4ee8-97f6-fc55c95e2455",
@@ -54,7 +24,7 @@
     {
       "id": "f61802d4-b703-4f75-b1fb-e7b61215e767",
       "playerName": "ten",
-      "playerSurname": "rer",
+      "playerSurname": "desen",
       "playerTeam": "none"
     },
     {
