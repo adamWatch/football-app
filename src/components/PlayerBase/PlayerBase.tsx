@@ -7,10 +7,13 @@ import { FetchList } from '../hooks/FetchList';
 import { AddToList } from '../AddToList/AddPlayerToList';
 import { StyledOverlay } from '../../styles/StyledForm';
 import { Notice } from '../Notice/Notice';
+import { EditPlayerList } from '../EditList/EditPlayerList';
+
 
 
 export const PlayerBase = ()=>{
     const [addForm, setAddForm] = useState(false);
+    const [editMode, setEditMode] = useState(false);
     const [isNotice,setIsNotice] = useState(false);
     const playersData = FetchList('players');
     const [notice,setNotice] = useState('');
@@ -18,6 +21,9 @@ export const PlayerBase = ()=>{
 
    const showAddForm = () => {
         setAddForm(!addForm);
+    }
+    const showEditMode = () => {
+        setEditMode(!editMode); 
     }
 
     const showNotice = () => {
@@ -46,10 +52,12 @@ export const PlayerBase = ()=>{
                     ))} 
                 </tbody>
             </StyledTable>
-        {addForm &&<AddToList showAddForm ={showAddForm} showNotice = {showNotice} setNotice = {setNotice} />  } 
+        {addForm &&<AddToList showAddForm ={showAddForm} showNotice = {showNotice} setNotice = {setNotice} />  }
+        {editMode &&<EditPlayerList type='tap' showEditMode={showEditMode}/> }
         {addForm &&<StyledOverlay/>}
+        {editMode &&<StyledOverlay/>}
         {isNotice && <Notice text={notice}/>}
         <button onClick={showAddForm}>Add</button>    
-        <button>Edit</button>    
+        <button onClick={showEditMode}>Edit</button>    
     </StyledListContainer>
 }
