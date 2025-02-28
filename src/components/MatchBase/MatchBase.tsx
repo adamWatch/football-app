@@ -1,13 +1,35 @@
-import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
 import { StyledListContainer,StyledListBaner, } from '../../styles/StyledList';
 import { StyledTable,  StyledTd, StyledTh,  } from '../../styles/StyledTable';
 import { Match } from '../../types/Match';
 import { FetchList } from '../hooks/FetchList';
+import { EditMatchList } from '../EditList/EditMatchList';
+import { StyledOverlay } from '../../styles/StyledForm';
+import { StyledAddBtn, StyledEditModeBtn } from '../../styles/StyledEditMode';
+import { Notice } from '../Notice/Notice';
+import { AddMatchToList } from '../AddToList/AddMatchToList';
 
 
 
 export const MatchBase = ()=>{
+    const [addForm, setAddForm] = useState(false);
+    const [editMode, setEditMode] = useState(false);
+    const [isNotice, setIsNotice] = useState(false);
     const matchesData = FetchList('matches');
+    const [notice, setNotice] = useState('');
+
+    const showAddForm = () => {
+        setAddForm(!addForm);
+    };
+
+    const showEditMode = () => {
+        setEditMode(!editMode); 
+    }
+
+    const showNotice = () => {
+        setIsNotice(!isNotice);
+        setTimeout(() => setIsNotice(false), 2500);
+    };
 
 
     return <StyledListContainer>
@@ -39,6 +61,19 @@ export const MatchBase = ()=>{
                         </tr>
                     ))}
                 </tbody>
+            {addForm && (
+                <AddMatchToList
+                    showAddForm={showAddForm}
+                    showNotice={showNotice}
+                    setNotice={setNotice}
+                />
+            )}                
+            {editMode &&<EditMatchList showEditMode={showEditMode}/> }
+            {addForm && <StyledOverlay />}
+            {editMode &&<StyledOverlay/>}
+            {isNotice && <Notice text={notice} />}
+            <StyledAddBtn onClick={showAddForm}>Add</StyledAddBtn>    
+            <StyledEditModeBtn onClick={showEditMode}>Edit</StyledEditModeBtn>               
             </StyledTable>
     </StyledListContainer>
 }
