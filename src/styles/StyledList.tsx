@@ -21,8 +21,9 @@ export const StyledEditListContainer = styled.div`
     background-color: aliceblue;
     align-items: center;
     justify-content: center;
+    background: -webkit-linear-gradient(to right, #a8c0ff, #3f2b96); 
+    background: linear-gradient(to right, #a8c0ff, #3f2b96);
     padding: 1rem;
     top: 20%;
-    left: 20%;
     z-index: 19;
 `

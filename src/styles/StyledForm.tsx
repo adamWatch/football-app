@@ -20,7 +20,6 @@ export const StyledFormContainer = styled.div`
     width: 80%;
     align-items: center;
     justify-content: center;
-    height: 70%;
     background: #a8c0ff;
     background: -webkit-linear-gradient(to right, #a8c0ff, #3f2b96); 
     background: linear-gradient(to right, #a8c0ff, #3f2b96);
