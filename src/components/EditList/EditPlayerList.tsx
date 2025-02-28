@@ -8,6 +8,7 @@ import { faX } from '@fortawesome/free-solid-svg-icons/faX';
 import { useDeleteItem } from '../hooks/useDeleteItem';
 import { useState } from 'react';
 import { EditPlayerForm } from '../EditForm/EditPlayerForm';
+import { StyledDeleteBtn,StyledEditBtn } from '../../styles/StyledEditMode';
 
 
 interface EditListProps {
@@ -69,8 +70,8 @@ export const EditPlayerList = (props:EditListProps) => {
                                 <StyledTd>{player.playerName}</StyledTd>
                                 <StyledTd>{player.playerSurname}</StyledTd>
                                 <StyledTd>{player.playerTeam}</StyledTd>
-                                <StyledTd><button onClick={()=>handleEditPlayer(player)}>Edit</button></StyledTd>
-                                {player.playerTeam === 'none' ? <StyledTd><button onClick={()=>deletePlayer(player.id)}>Delete</button></StyledTd> : <StyledTd><button disabled>Delete</button></StyledTd>}
+                                <StyledTd><StyledEditBtn onClick={()=>handleEditPlayer(player)}>Edit</StyledEditBtn></StyledTd>
+                                {player.playerTeam === 'none' ? <StyledTd><StyledDeleteBtn onClick={()=>deletePlayer(player.id)}>Delete</StyledDeleteBtn></StyledTd> : <StyledTd><StyledDeleteBtn disabled>Delete</StyledDeleteBtn></StyledTd>}
                             </tr>
                         ))} 
                     </tbody>
