@@ -8,6 +8,7 @@ import { AddToList } from '../AddToList/AddPlayerToList';
 import { StyledOverlay } from '../../styles/StyledForm';
 import { Notice } from '../Notice/Notice';
 import { EditPlayerList } from '../EditList/EditPlayerList';
+import { StyledAddBtn, StyledEditModeBtn } from '../../styles/StyledEditMode';
 
 
 
@@ -57,7 +58,7 @@ export const PlayerBase = ()=>{
         {addForm &&<StyledOverlay/>}
         {editMode &&<StyledOverlay/>}
         {isNotice && <Notice text={notice}/>}
-        <button onClick={showAddForm}>Add</button>    
-        <button onClick={showEditMode}>Edit</button>    
+        <StyledAddBtn onClick={showAddForm}>Add</StyledAddBtn>    
+        <StyledEditModeBtn onClick={showEditMode}>Edit</StyledEditModeBtn>    
     </StyledListContainer>
 }
