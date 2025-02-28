@@ -10,4 +10,7 @@ export const StyledNoticed = styled.div`
     position: absolute;
     top: 20%;
     right: 20%;
+    background-color: antiquewhite;
+    font-size: 2rem;
+    border-radius: 10px;
 `
