@@ -9,6 +9,7 @@ import { useDeleteItem } from '../hooks/useDeleteItem';
 import { useState } from 'react';
 import { EditPlayerForm } from '../EditForm/EditPlayerForm';
 import { StyledDeleteBtn,StyledEditBtn } from '../../styles/StyledEditMode';
+import { Notice } from '../Notice/Notice';
 
 
 interface EditListProps {
@@ -19,6 +20,8 @@ export const EditPlayerList = (props:EditListProps) => {
 
         const {showEditMode} = props;
 
+        const [notice, setNotice] = useState('');
+        const [isNotice,setIsNotice] = useState(false);
         const deleteItem = useDeleteItem('players');
         const [isEdit, setIsEdit] = useState(false);
         const [editPlayerData, setEditPlayerData] = useState<Player>({
@@ -28,9 +31,17 @@ export const EditPlayerList = (props:EditListProps) => {
             playerTeam:'none'
         });
 
+        const showNotice = () => {
+            setIsNotice(!isNotice);
+            setTimeout(()=>setIsNotice(false),2500);
+        }
+        
+
         const deletePlayer = (id:string) => {
             if (window.confirm('Are you sure you want to delete this player?')) {
                 deleteItem(id)
+                setNotice('Player has been deleted');
+                showNotice();
         };
         }
         
@@ -77,7 +88,8 @@ export const EditPlayerList = (props:EditListProps) => {
                     </tbody>
                 </StyledTable>
                 {isEdit && <StyledOverlay/> }
-                {isEdit && <EditPlayerForm showEditForm={showEditForm} editPlayerData={editPlayerData} />}        
+                {isEdit && <EditPlayerForm showEditForm={showEditForm} editPlayerData={editPlayerData} showNotice={showNotice} setNotice={setNotice} />} 
+                {isNotice && <Notice text={notice}/>}       
                 </StyledEditListContainer>
         )
 
