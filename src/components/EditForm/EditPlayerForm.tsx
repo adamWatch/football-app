@@ -9,11 +9,13 @@ interface EditFormProps {
 
     showEditForm:()=>void;
     editPlayerData:Player;
+    showNotice:()=>void;
+    setNotice:(notice:string)=>void;
 }
 
 export const EditPlayerForm = (props:EditFormProps) => { 
     
-    const {showEditForm, editPlayerData} = props;
+    const {showEditForm, editPlayerData,showNotice,setNotice} = props;
     console.log(editPlayerData)
     const editItem = useEditItem('players');
 
@@ -39,6 +41,8 @@ export const EditPlayerForm = (props:EditFormProps) => {
         editItem({ id: playerData.id, newData: playerData }, {
             onSuccess: () => {
                 showEditForm();
+                setNotice('Player has been updated');
+                showNotice();
             },
         });
     };
